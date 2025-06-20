@@ -1,0 +1,33 @@
+@model List<Domain.Entities.Book>
+
+
+@{
+    ViewData["Title"] = "Books List";
+}
+
+@* <h2>Books List</h2> *@
+<div class="d-flex justify-content-between">
+    <h2>Books</h2>
+    <a asp-page="/books/create" class="btn btn-primary mb-3">+ Add</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Published</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Genre</td>
+                <td>@book.PublishedDate.ToString("yyyy-MM-dd")</td>
+            </tr>
+        }
+    </tbody>
+</table>

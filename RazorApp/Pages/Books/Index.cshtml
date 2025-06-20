@@ -4,7 +4,11 @@
     ViewData["Title"] = "Books List";
 }
 
-<h2>Books List</h2>
+@* <h2>Books List</h2> *@
+<div class="d-flex justify-content-between">
+    <h2>Books</h2>
+    <a asp-page="/books/create" class="btn btn-primary mb-3">+ Add</a>
+</div>
 
 <table class="table table-striped">
     <thead>
